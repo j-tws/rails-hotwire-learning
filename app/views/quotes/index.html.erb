@@ -1,3 +1,14 @@
+
+<%# 
+# the turbo_stream_from helper generates a custom element used in the Turbo Javascript library
+to suscribe users to the channel named in the `channel` attribute, and more specifically, to the
+stream named in the signed-stream-name attribute
+
+# the Turbo::StreamsChannel inside the `channel` attribute is the name of the Action Cable channel.
+Turbo Rails always uses this channel, so this attribute is always the same
+%>
+<%= turbo_stream_from "quotes" %>
+
 <main class="container">
   <div class="header">
     <h1>Quotes</h1>

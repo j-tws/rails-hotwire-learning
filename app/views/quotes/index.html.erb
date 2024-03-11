@@ -7,7 +7,7 @@ stream named in the signed-stream-name attribute
 # the Turbo::StreamsChannel inside the `channel` attribute is the name of the Action Cable channel.
 Turbo Rails always uses this channel, so this attribute is always the same
 %>
-<%= turbo_stream_from "quotes" %>
+<%= turbo_stream_from current_company, "quotes" %>
 
 <main class="container">
   <div class="header">

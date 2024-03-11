@@ -18,6 +18,7 @@ Turbo Rails always uses this channel, so this attribute is always the same
   <%= turbo_frame_tag Quote.new %>
 
   <%= turbo_frame_tag "quotes" do %>
+    <%= render "quotes/empty_state" %>
     <%= render @quotes %>
   <% end %>
 </main>

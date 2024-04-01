@@ -1,6 +1,7 @@
 class Quote < ApplicationRecord
   belongs_to :company
   has_many :line_item_dates, dependent: :destroy
+  has_many :line_items, through: :line_item_dates
 
   validates :name, presence: true
 
@@ -32,4 +33,8 @@ class Quote < ApplicationRecord
   # 2. The second part of the expression in the lambda is more complex.
   # It instructs our rails app that the HTML of the created quote should be broadcasted
   # to users subscribed to the "quotes" stream and prepended to the DOM node with the id of "quotes"
+
+  def total_price
+    line_items.sum(&:total_price)
+  end
 end
